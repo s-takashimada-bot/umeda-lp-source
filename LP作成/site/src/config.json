@@ -1,0 +1,147 @@
+{
+  "_説明": "LP全体の設定。日程・URL・計測IDなどはここだけを直せば5本すべてに反映される。空欄や【要確認】が残っていると、公開用ビルド（node build.mjs --release）は止まる。",
+  "siteName": "MIRAI CAMP® 大阪梅田校",
+  "brand": "MIRAI CAMP®",
+  "schoolName": "大阪梅田校",
+  "company": "株式会社GHD",
+  "siteUrl": "https://miraicamp-osaka-umeda.jp",
+  "line": {
+    "_説明": "LINE公式アカウント「MIRAI CAMP 大阪梅田校」（@719ntdoh）の友だち追加URL。LPごとに友だち追加経路（経路LP・流入元＝各LP・キャンペーン開校2026-12）を作った（11/9）。人数は管理画面の［分析］＞［友だち］＞［追加経路］",
+    "top": "https://lin.ee/Y9pbDgF",
+    "owner": "https://lin.ee/VlFox9D",
+    "salon": "https://lin.ee/Q7bwuvU",
+    "office": "https://lin.ee/9WhCr4mt",
+    "restaurant": "https://lin.ee/voUQkYk",
+    "corporate": "https://lin.ee/zfjhcne"
+  },
+  "giftDir": "gift-outhlply",
+  "_giftDirの説明": "チェックリスト（4種のPDF）を置くフォルダ。11/11 本人の決定で、LINE登録特典ではなくLPから直接渡す（各LPの「チェックリストを見る（無料・登録不要）」ボタンが、そのLPの版を開く）。本部LINEの設定は加盟店が変えられず、LINEで送る手段がないため。フォルダ名は、すでに配ったURLが開けなくならないよう変えない",
+  "applyUrl": "https://aicamp.gokindler.com/event/6Z2xwAeDSzXL/register",
+  "_applyUrlの説明": "本部が用意した大阪梅田校の申込ページ（11/11 本部から連絡）。日程を選んで、申込とカード決済まで進むページ。受講規約・特商法の表記・プライバシーポリシーは本部のものにリンクしている",
+  "corporateFormEmbedUrl": "https://docs.google.com/forms/d/e/1FAIpQLSfEurVXpKQnJ9v4P5I_Pu-U6r1vQc1l_-mugGj3NdfCpX2IRg/viewform?embedded=true",
+  "_corporateFormの説明": "法人LPに埋め込むGoogleフォーム「法人お問い合わせフォーム（大阪梅田校LP）」。持ち主は miraicamp.osaka.umeda@gmail.com（11/11作成・公開）。編集は https://docs.google.com/forms/d/1h567tZahZJXVhKyPi-K0oSIHMOhMi8SJyBHbknEwAZ0/edit 。回答が届くと同じアドレスに通知メールが届く。「5日以内に返信」と書いてある",
+  "analytics": {
+    "ga4": "G-TVJSMF936B",
+    "googleTag": "GTM-NLTZWJD7",
+    "metaPixel": "1593407955870947",
+    "_説明": "ga4＝Googleアナリティクスの測定ID（アカウント「MIRAI CAMP 大阪梅田校」・プロパティ「大阪梅田校LP（miraicamp-osaka-umeda.jp）」・ストリームID 16312202157。miraicamp.osaka.umeda@gmail.com で11/10作成）。googleTag＝アナリティクスの管理画面が「貼り付けるコード」として出すGoogleタグの番号（この番号で読み込むと、測定IDへ送られる）。metaPixel＝Metaのデータセット「MIRAI CAMP 大阪梅田校 LP」（11/9作成。ビジネスポートフォリオ「MIRAI CAMP 大阪梅田校」ID 1158262453555874 の中）。計測タグは公開用（--release）でだけ読み込む。手元で動作を確かめるときだけ node build.mjs --preview --tags"
+  },
+  "schedule": {
+    "openStart": "2026-12-05",
+    "openEnd": "2026-12-06",
+    "openLabel": "12月5日（土）・6日（日）開校",
+    "afterOpenLabel": "毎月開催中｜土日コース・平日コース",
+    "courses": [
+      {
+        "name": "土日コース",
+        "detail": "毎月開催｜土曜・日曜の2日間（各日10:00〜17:00）"
+      },
+      {
+        "name": "平日コース",
+        "detail": "毎月開催｜月曜・火曜の2日間（各日10:00〜17:00）"
+      }
+    ],
+    "capacity": "講師1人につき受講生5名までの少人数制。3名以上のお申込みで開催します",
+    "dateNote": "開催日は、申込ページでご確認いただけます。",
+    "applyDeadline": "お申込みは、開催前日の13:00までです。",
+    "_applyDeadlineの説明": "申込の締切（本部の表記：開催前日の13:00まで）。日程の欄に出す。11/11 本人：日程とよくある質問に申込期限と「3名以上で開催」を書く（capacity に追記）"
+  },
+  "venue": {
+    "address": "大阪市北区中崎西1丁目8-24 アインズビル梅田 307号室",
+    "access": [
+      "阪急「大阪梅田駅」から徒歩8分",
+      "Osaka Metro 谷町線「中崎町駅」から徒歩3分"
+    ],
+    "mapQuery": "大阪市北区中崎西1丁目8-24",
+    "_mapQueryの説明": "11/13 本人：ビル名で検索すると、ビルの口コミの星（3.5）が地図に出て講座の評価に見えるので、住所だけにする。地図の下に「Googleマップで開く」のリンク",
+    "photos": []
+  },
+  "price": {
+    "course": "150,000円（税込）",
+    "claudePro": "月20ドル（ご自身でご契約）",
+    "claudeProConfirmed": true,
+    "support": "月11,000円（税込）",
+    "courseYen": 150000
+  },
+  "instructors": [
+    {
+      "name": "大竹",
+      "bio": "",
+      "image": "",
+      "consent": false
+    },
+    {
+      "name": "志野",
+      "bio": "",
+      "image": "",
+      "consent": false
+    },
+    {
+      "name": "付",
+      "bio": "",
+      "image": "",
+      "consent": false
+    }
+  ],
+  "showInstructors": false,
+  "_showInstructorsの説明": "講師3名の個別の掲載（名前・一言経歴のカード）を出すか。11/11 本人「取り急ぎ要らない」で false（公開の条件からも外した）。代わりに「どんな講師か」の紹介（顔は出さずイメージのイラスト・経歴・AIをどう使っているか）を載せる方針で、書き方はあとで相談して決める",
+  "publish": {
+    "_説明": "公開先（GitHub Pages）。node deploy.mjs が、書き出した dist/ の中身を dir にコピーしてGitHubに送る。dir はOneDriveの外に置く（同期とgitがぶつかるため）",
+    "repo": "s-takashimada-bot/umeda-lp",
+    "dir": "C:/Users/s-tak/umeda-lp-public",
+    "previewUrl": "https://s-takashimada-bot.github.io/umeda-lp"
+  },
+  "showVoices": true,
+  "_showVoicesの説明": "受講生の声（本部の受講生の動画3本）を出すか。11/8 本人「受講生動画は入れてよい」で true",
+  "ogImage": "assets/img/og/og-{page}.jpg",
+  "_ogImageの説明": "SNS・LINEでURLを送ったときに出る画像。{page} はページごとに top / owner / salon / restaurant / office / corporate に置き換わる（特商法・プライバシーは top）。画像は node og.mjs で作り直せる",
+  "repImage": "assets/img/rep.jpg",
+  "heroVideo": "assets/video/hero-top.mp4",
+  "heroVideoPoster": "assets/video/hero-top-poster.jpg",
+  "heroVideoTall": "assets/video/hero-top-tall.mp4",
+  "heroVideoTallPoster": "assets/video/hero-top-tall-poster.jpg",
+  "_heroVideoの説明": "最初の画面の動画（音なし・自動再生・くり返し）。元は ../../広告素材/完成動画/MIRAI CAMP 梅田校ロゴ横（トップ採用・仕上げ）.mp4（15秒・1920x1080・約17MB）。11/12 ffmpegで1280x720・約3MBに軽くした（音は消した）。縦版（720x1280・約2.7MB）は ../../広告素材/完成動画/LP用_縦_720x1280_軽量版.mp4 に置いた（いまは使っていない）。作り直すときは ffmpeg -i 元.mp4 -an -vf scale=1280:-2 -c:v libx264 -crf 27 -movflags +faststart 出力.mp4",
+  "screens": [
+    {
+      "file": "assets/img/screens/screen-monthly.jpg",
+      "caption": "月次の店舗分析レポート（4店舗）"
+    },
+    {
+      "file": "assets/img/screens/screen-shift.jpg",
+      "caption": "シフト自動作成アプリ（最終チェックつき）"
+    },
+    {
+      "file": "assets/img/screens/screen-map.jpg",
+      "caption": "業務マップ（AIに任せている業務）"
+    }
+  ],
+  "tokushoho": {
+    "_説明": "11/11 本人「契約は株式会社GHD」→ 販売事業者を加盟店（株式会社GHD）にした。申込と決済の受付だけ本部の申込ページを使う。返金・クーリング・オフの決まりは、11/11 本人「返金は本部に合わせて」のとおり本部の表記（sourceUrl。2026年10月11日作成の暫定版）と同じ中身で、窓口を梅田校のメールにしている。電話番号は本人の決定（11/9）で「ご請求があれば遅滞なく開示」。extraCosts は、LPの料金の欄と同じくClaude Proなどの費用まで書いている",
+    "sourceUrl": "https://aicamp.gokindler.com/p/NaUcLDkSPZFm",
+    "seller": "株式会社GHD（MIRAI CAMP® 大阪梅田校）",
+    "representative": "高島田 祥平",
+    "address": "大阪市北区中崎西1丁目8-24 アインズビル梅田 307号室（MIRAI CAMP® 大阪梅田校）",
+    "phone": "ご請求があれば遅滞なく開示します。お問い合わせはメールでお願いいたします。",
+    "email": "miraicamp.osaka.umeda@gmail.com",
+    "service": "MIRAI CAMP 2日間講座（2日間、各日10:00〜17:00。大阪梅田校の教室で開催）",
+    "extraCosts": "受講に必要なノートパソコン・インターネット環境・Claude Pro（月20ドル程度）の費用、教室までの交通費はお客様のご負担です。",
+    "payment": "クレジットカード決済（一括払い）。MIRAI CAMP本部の申込ページで受け付けます。",
+    "paymentTiming": "お申込み時にお支払いが確定します。",
+    "delivery": "お申込みいただいた開催日（2日間）。決済完了後、事前準備のご案内をお送りします。",
+    "period": "開催前日の13:00までにお申込みください。講師1人につき受講生5名までの少人数制で、3名以上のお申込みで開催します。",
+    "coolingOff": "2日間講座は、クーリング・オフの対象です。契約書面を受領した日から8日を経過する日までは、書面または電子メール（{email}）で契約を解除できます。この場合、お支払い済みの受講費用は全額返還します。",
+    "refund": "クーリング・オフ期間の経過後は、サービス提供の開始前後を問わず、返金できません。",
+    "notes": [
+      "本サービスは、受講者の努力を前提とした学習プログラムです。",
+      "本サービスで示された表現や再現性には個人差があり、利益や効果を保証するものではありません。",
+      "受講生の学習の進み具合により、習得にかかる時間には個人差が生じます。",
+      "講座の内容は、予告なく変更される場合があります。",
+      "著作権保護のため、教材の複製・転載・共有は禁止されています。"
+    ]
+  },
+  "_screensの説明": "校舎長が作って使っている画面（11/11 本人OK）。店舗名・スタッフ名・社名は置きかえ、金額などの数字はぼかした手元のコピーから撮った。元の画像は ../画面スクショ案/",
+  "soudan": {
+    "enabled": true,
+    "_説明": "個別無料相談会の予約ページを /soudan/ に置き、個人向けページの一番下に相談窓口のリンクを出す（11/15 本人：A案で公開）"
+  }
+}
