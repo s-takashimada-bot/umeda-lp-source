@@ -55,7 +55,9 @@ if (dry) { console.log(`コピーしました（--dry）：${DIR}`); process.exi
 run('git', ['add', '-A']);
 if (!out('git', ['status', '--porcelain'])) { console.log('変更なし'); process.exit(0); }
 const now = new Date().toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' });
-run('git', ['commit', '-m', `元のコードを更新（${now}）`]);
+run('git', ['commit', '-m', `元のコードを更新（${now}）
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`]);
 if (!out('git', ['remote'])) run('git', ['remote', 'add', 'origin', `https://github.com/${REPO}.git`]);
 run('git', ['push', '-u', 'origin', 'main']);
 console.log(`送りました → https://github.com/${REPO}`);

@@ -46,3 +46,7 @@ if (!out('git', ['status', '--porcelain'], { cwd: dir })) {
   run('git', ['push', '-q', 'origin', 'HEAD:main'], { cwd: dir });
   console.log(`送りました → ${url || repo}（反映まで1〜2分）`);
 }
+
+// 11/16 本人：本部にコードを見てもらうため、元のコードも GitHub（umeda-lp-source・公開）に送る
+const syncR = spawnSync(process.execPath, [join(root, 'tools/sync-source.mjs')], { stdio: 'inherit' });
+if (syncR.status !== 0) console.warn('元のコードの送信に失敗しました（ページの公開は済んでいます）');
