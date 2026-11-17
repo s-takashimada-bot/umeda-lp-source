@@ -22,10 +22,14 @@ function lineHref(ctx, key) {
 }
 
 // 11/14 本人：LINEの大きいボタンには「簡単30秒」を必ず付ける（共通部品。下の固定ボタンとヘッダーの小さいボタンには付けない）
+// 11/18 本人：本部が梅田校LINEを作り直し、友だち追加ですぐ「AI開発全体マップ」が届く → ボタンの言葉は特典に（B-2）、ボタンの近くに一言（A-1）
+const LINE_LABEL = 'LINEでAI開発全体マップを受け取る';
+const LINE_GIFT_NOTE = `<p class="cta-note line-gift-note">LINEに登録すると、すぐに「AI開発全体マップ」が届きます。無料セミナーの日程もお知らせします。</p>`;
+
 function lineButton(ctx, key, { size = 'lg', label, track = 'line_click', where = '', quick = size === 'lg' && where !== 'sticky' } = {}) {
   const href = lineHref(ctx, key);
   const missing = href === '#line';
-  const text = label || 'LINEで無料セミナーの案内を受け取る';
+  const text = label || LINE_LABEL;
   // 確認用：LINEのURLがまだないときは、押せないボタンで「準備中」と出す
   if (missing && ctx.preview) return `<span class="btn btn-line btn-${size} is-disabled" aria-disabled="true">${icon('line')}<span>${size === 'sm' ? 'LINE準備中' : '公式LINEは準備中です'}</span></span>`;
   const btn = `<a class="btn btn-line btn-${size}" href="${esc(href)}" ${missing ? 'data-missing="LINEのURL"' : 'target="_blank" rel="noopener"'} data-track="${track}" data-where="${where}">${icon('line')}<span>${text}</span></a>`;
@@ -554,10 +558,11 @@ function hqHero(ctx, v) {
           ? `<div class="cta-row">${formButton('hero')}</div>
         <p class="cta-note">ご相談・お見積りは無料です。5日以内に担当者からメールでご連絡します。</p>`
           : `<div class="cta-row">
-          ${lineButton(ctx, v.key, { where: 'hero', label: 'LINEで無料セミナーの案内を受け取る' })}
+          ${lineButton(ctx, v.key, { where: 'hero', label: LINE_LABEL })}
           ${giftButton(ctx, v.key, { where: 'hero' })}
           ${v.heroLink || ''}
         </div>
+        ${LINE_GIFT_NOTE}
         <p class="cta-note">LINE登録だけでは、お申込みにはなりません。</p>`}
       </div>
       <div class="hero-visual">
@@ -590,7 +595,8 @@ function lineCta(ctx, v, lead, where) {
   </div>`;
   return `<div class="hq-cta">
     <p class="hq-cta-lead">${lead}</p>
-    ${lineButton(ctx, v.key, { where, label: 'LINEで無料セミナーの案内を受け取る' })}
+    ${lineButton(ctx, v.key, { where, label: LINE_LABEL })}
+    ${LINE_GIFT_NOTE}
     <p class="cta-note">LINEから簡単に申込めます。まずは話を聞くだけでもOK。LINE登録だけでは、お申込みにはなりません。</p>
   </div>`;
 }
@@ -775,17 +781,32 @@ function hqBriefing(ctx, v) {
 </section>`;
 }
 
+// LINE登録でもらえる「AI開発全体マップ」のカード（本部の素材。画面の画像は使わない＝11/18 本人 C-1）
+function lineGiftCard(ctx, key) {
+  return `<div class="gift-card gift-card-line">
+      <p class="gift-tag">② LINE登録で、すぐ届く</p>
+      <h2>AI開発全体マップ</h2>
+      <p class="body">AIでアプリをつくる流れが、1枚でわかる地図です。2日間で学ぶ94の考え方を11の分類に分けて、つながりを1枚にまとめました。詰まったときに「今どこにいて、次に何を学べばいいか」を確かめられます。</p>
+      ${lineButton(ctx, key, { where: 'gift', label: LINE_LABEL, quick: false })}
+      <p class="fine">公式LINEに友だち追加すると、すぐに届きます（Webページで開きます）。無料セミナーの日程もお知らせします。</p>
+    </div>`;
+}
+
 function hqGift(ctx, v) {
   if (!v.giftTitle) return '';
   const g = C.hq.gift;
   return `<section class="sec hq-gift" id="gift">
-  <div class="container narrow">
+  <div class="container">
+    ${sectionHead('無料プレゼントは2つ', { eyebrow: g.eyebrow })}
+    <div class="gift-pair">
     <div class="gift-card">
-      <p class="eyebrow">${g.eyebrow}</p>
+      <p class="gift-tag">① このページで、すぐ（登録不要）</p>
       <h2>${v.giftTitle}</h2>
       <p class="body">${v.giftLead}</p>
       ${giftButton(ctx, v.key, { where: 'gift' })}
       <p class="fine">${g.lead2}</p>
+    </div>
+    ${v.formCta ? '' : lineGiftCard(ctx, v.key)}
     </div>
   </div>
 </section>`;
@@ -821,7 +842,8 @@ function hqFinal(ctx, v) {
     ${sectionHead(f.title, { eyebrow: f.eyebrow })}
     ${f.lines.map((l) => `<p class="body">${l}</p>`).join('\n    ')}
     <ul class="hq-pills">${f.pills.map((p) => `<li>${p}</li>`).join('')}</ul>
-    ${lineButton(ctx, v.key, { where: 'final', label: 'LINEで無料セミナーの案内を受け取る' })}
+    ${lineButton(ctx, v.key, { where: 'final', label: LINE_LABEL })}
+    ${LINE_GIFT_NOTE}
     <p class="cta-note">LINEから簡単に申込めます。まずは話を聞くだけでもOK。<br>LINE登録だけでは、お申込みにはなりません。</p>
     ${applyLink(ctx, { cls: 'text-link', where: 'final' })}
     ${ctx.config.soudan?.enabled ? `<div class="soudan-link"><p>個別に相談したい方へ｜オンライン30分・無料の個別相談会　<a href="${ctx.base}soudan/" data-track="soudan_click" data-where="final">相談会を予約する ›</a></p><p class="fine">講座のご案内は、聞きたい方にだけお伝えします。相談だけでも大丈夫です。</p></div>` : ''}
@@ -909,13 +931,17 @@ function hqGiftAll(ctx, variants, order) {
   const btns = order.map((k) => giftButton(ctx, k, { cls: 'btn btn-orange btn-md', where: 'gift', short: true })).filter(Boolean);
   if (!btns.length) return '';
   return `<section class="sec hq-gift" id="gift">
-  <div class="container narrow">
+  <div class="container">
+    ${sectionHead('無料プレゼントは2つ', { eyebrow: g.eyebrow })}
+    <div class="gift-pair">
     <div class="gift-card">
-      <p class="eyebrow">${g.eyebrow}</p>
+      <p class="gift-tag">① このページで、すぐ（登録不要）</p>
       <h2>AIで自動化・効率化できることリスト</h2>
       <p class="body">毎月くり返している業務に印をつけるだけで、2日間で作るテーマが見つかります。お仕事に近い版を選んでください。</p>
       <div class="gift-buttons">${btns.join('')}</div>
       <p class="fine">${g.lead2}</p>
+    </div>
+    ${lineGiftCard(ctx, 'top')}
     </div>
   </div>
 </section>`;

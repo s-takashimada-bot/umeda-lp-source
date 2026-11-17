@@ -337,7 +337,7 @@ export const hq = {
   },
   gift: {
     eyebrow: '無料プレゼント',
-    lead2: '登録なしで、その場で開けます（PDF・3ページ）。',
+    lead2: '登録なしで、その場で開けます（PDF・4ページ）。',
   },
   firstStep: {
     eyebrow: 'LINE登録後の流れ',
