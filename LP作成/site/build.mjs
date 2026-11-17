@@ -37,6 +37,8 @@ const pages = [
 await rm(out, { recursive: true, force: true });
 await mkdir(out, { recursive: true });
 await cp(join(root, 'src/assets'), join(out, 'assets'), { recursive: true });
+// 11/17 サイトの一番上に置くファイル（Google Search Console の所有権の確認ファイルなど。消さない）
+if (existsSync(join(root, 'src/root'))) await cp(join(root, 'src/root'), out, { recursive: true });
 
 // LINE登録の特典（../特典/ で書き出したPDF）を /（giftDir）/checklist-◯◯.pdf に置く。
 // LPからはリンクせず、LINEでだけURLを送る。フォルダ名はランダムな文字（推測されにくくするため。robots.txtにも書かない）
