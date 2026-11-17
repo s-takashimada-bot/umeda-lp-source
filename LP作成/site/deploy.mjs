@@ -11,7 +11,8 @@ import { fileURLToPath } from 'node:url';
 
 const root = dirname(fileURLToPath(import.meta.url));
 const config = JSON.parse(await readFile(join(root, 'src/config.json'), 'utf8'));
-const release = process.argv.includes('--release');
+// 11/17 本人：本部の承認が出て本公開。config.released が true なら、ふだんの node deploy.mjs も公開用で送る（確認用に戻すときだけ --preview）
+const release = process.argv.includes('--release') || (config.released && !process.argv.includes('--preview'));
 const { repo, dir, previewUrl } = config.publish || {};
 if (!repo || !dir) throw new Error('config.json の publish（repo・dir）がありません');
 
